@@ -2,7 +2,6 @@ package bspl.mapakebabow.v1.Controllers;
 
 import bspl.mapakebabow.v1.DTOs.PositionDTO;
 import bspl.mapakebabow.v1.Services.PositionService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -4,7 +4,6 @@ import bspl.mapakebabow.v1.DTOs.RestaurantDTO;
 import bspl.mapakebabow.v1.DTOs.RestaurantResponse;
 import bspl.mapakebabow.v1.Services.RestaurantService;
 import bspl.mapakebabow.v1.Utils.AppConstants;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

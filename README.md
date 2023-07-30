@@ -12,7 +12,7 @@ Ksiazulo is a review manager application that helps users manage and track revie
 
 ## Technologies Used
 
-- Backend: `Java Spring Boot`
+- Backend: `Java Spring Boot`, `MySQL`
 - Frontend: `Next.js` with `Tailwind CSS` and `TypeScript`
 
 ### Prerequisites
@@ -20,3 +20,19 @@ Ksiazulo is a review manager application that helps users manage and track revie
 - `Java Development Kit (JDK) 17`
 - `Node.js`
 - Package manager (e.g., `npm` or `yarn`)
+
+### Usage
+
+1. Start the backend server:
+
+- Navigate to the `api/src/main/java/bspl/mapakebabow/v1` directory.
+- Run V1Application to start the backend server application on port 8080.
+
+2. Start the frontend application:
+
+- Navigate to the `app` directory.
+- Run the `npm run dev` command to start the Next.js application.
+
+3. Access the application:
+
+- Open your web browser and visit `http://localhost:3000` to access the app.
