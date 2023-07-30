@@ -2,14 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import GoogleMap from "google-maps-react-markers";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { env } from "~/env.mjs";
-import KebabIcon from "~/components/RestaurantsIcons/KebabIcon";
-import mapOptions from "../../utils/mapOptions.json";
 import Marker from "./Marker";
-
-import { type getServerSideProps } from "~/pages";
-import { type InferGetServerSidePropsType } from "next";
 
 // import useSWR from 'swr'
 // import Navbar from './navbar'
@@ -31,10 +26,10 @@ import { type InferGetServerSidePropsType } from "next";
 // }
 
 const Map = ({ restaurants }: RestaurantProps) => {
-  const [coords, setCoords] = useState({
-    lat: 54.7902566,
-    lng: 18.4069856,
-  });
+  // const [coords, setCoords] = useState({
+  //   lat: 54.7902566,
+  //   lng: 18.4069856,
+  // });
 
   const defaultCenter = {
     lat: 51.9537505,
@@ -42,7 +37,7 @@ const Map = ({ restaurants }: RestaurantProps) => {
   };
 
   const mapRef = useRef<google.maps.Map>();
-  const [mapReady, setMapReady] = useState(false);
+  const [, setMapReady] = useState(false);
 
   //   useEffect(() => {
   //     navigator.geolocation.getCurrentPosition(

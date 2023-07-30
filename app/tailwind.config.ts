@@ -11,7 +11,7 @@ export default {
         "-100": "-1",
       },
       ringWidth: {
-        6: "6px",
+        7: "7px",
       },
     },
   },
