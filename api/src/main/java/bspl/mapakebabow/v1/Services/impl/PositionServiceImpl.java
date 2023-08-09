@@ -4,6 +4,7 @@ import bspl.mapakebabow.v1.DTOs.PositionDTO;
 import bspl.mapakebabow.v1.Entities.Position;
 import bspl.mapakebabow.v1.Exceptions.ResourceNotFoundException;
 import bspl.mapakebabow.v1.Repositories.PositionRepository;
+import bspl.mapakebabow.v1.Repositories.RestaurantRepository;
 import bspl.mapakebabow.v1.Services.PositionService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -16,11 +17,13 @@ public class PositionServiceImpl implements PositionService {
 
     private PositionRepository positionRepository;
 
+    private RestaurantRepository restaurantRepository;
     private ModelMapper modelMapper;
 
-    public PositionServiceImpl(PositionRepository positionRepository, ModelMapper modelMapper) {
+    public PositionServiceImpl(PositionRepository positionRepository, ModelMapper modelMapper, RestaurantRepository restaurantRepository) {
         this.positionRepository = positionRepository;
         this.modelMapper = modelMapper;
+        this.restaurantRepository = restaurantRepository;
     }
 
     @Override
@@ -51,8 +54,15 @@ public class PositionServiceImpl implements PositionService {
     }
 
     @Override
+    public PositionDTO getPositionById(Long id) {
+        Position position = positionRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Position", "id", id));
+        return modelMapper.map(position, PositionDTO.class);
+    }
+
+    @Override
     public void deletePosition(Long id) {
         Position position = positionRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Position", "id", id));
         positionRepository.delete(position);
     }
+
 }

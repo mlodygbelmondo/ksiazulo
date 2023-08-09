@@ -28,6 +28,11 @@ public class PositionController {
         return ResponseEntity.ok(positionService.getAllPositions());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<PositionDTO> getPositionById(@PathVariable(name = "id") Long id){
+        return ResponseEntity.ok(positionService.getPositionById(id));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<PositionDTO> updatePosition(@RequestBody PositionDTO positionDTO,
                                                       @PathVariable(name = "id") Long id){

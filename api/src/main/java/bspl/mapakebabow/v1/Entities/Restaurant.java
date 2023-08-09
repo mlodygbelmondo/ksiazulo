@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -32,4 +33,18 @@ public class Restaurant {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "position_id")
     private Position position;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "city_id")
+    private City city;
+
+    @Column(name = "map_url")
+    private String mapUrl;
+
+    @Column(name = "img_url")
+    private String imgUrl;
 }

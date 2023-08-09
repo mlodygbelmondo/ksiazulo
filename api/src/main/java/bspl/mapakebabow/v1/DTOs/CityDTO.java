@@ -8,14 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RestaurantDTO {
+public class CityDTO {
     private Long id;
     private String name;
-    private String ytUrl;
-    private float rating;
-    private Long positionId;
-    private Long categoryId;
-    private Long cityId;
-    private String mapUrl;
-    private String imgUrl;
+    private Double latitude;
+    private Double longitude;
+    private int zoom;
 }
