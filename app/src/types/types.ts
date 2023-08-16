@@ -17,12 +17,24 @@ type Position = {
   longitude: number;
 };
 
+type Category = {
+  id: number;
+  name: string;
+};
+
+type City = {
+  id: number;
+  name: string;
+};
+
 type Restaurant = {
   id: string;
   name: string;
   rating: number;
   latitude: number;
   longitude: number;
+  category: string;
+  city: string;
   ytUrl: string;
 };
 

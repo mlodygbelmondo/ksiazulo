@@ -6,7 +6,7 @@ interface OwnProps {
 const RestaurantActionButtons = ({ ytUrl }: OwnProps) => {
   const restaurantActionButtons = [
     {
-      icon: <BsYoutube className="text-red-600" />,
+      icon: <BsYoutube className="text-youtube-red" />,
       link: ytUrl,
     },
     {
@@ -23,7 +23,7 @@ const RestaurantActionButtons = ({ ytUrl }: OwnProps) => {
           target="_blank"
           href={button.link}
           key={index}
-          className="rounded-full text-[19px] hover:bg-gray-50 hover:ring-7 hover:ring-gray-50"
+          className="rounded-full text-xl hover:bg-gray-50 hover:ring-7 hover:ring-gray-50"
         >
           {button.icon}
         </a>

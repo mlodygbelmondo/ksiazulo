@@ -4,48 +4,13 @@
 import GoogleMap from "google-maps-react-markers";
 import { useRef, useState } from "react";
 import { env } from "~/env.mjs";
-import Marker from "./Marker";
-
-// import useSWR from 'swr'
-// import Navbar from './navbar'
-// import Footer from './footer'
-
-// export default function Layout({ children }) {
-//   const { data, error } = useSWR('/api/navigation', fetcher)
-
-//   if (error) return <div>Failed to load</div>
-//   if (!data) return <div>Loading...</div>
-
-//   return (
-//     <>
-//       <Navbar links={data.links} />
-//       <main>{children}</main>
-//       <Footer />
-//     </>
-//   )
-// }
+import Marker from "./RestaurantMarker";
+import { DEFAULT_MAP_CENTER, MAP_ZOOM } from "~/utils/consts";
+import { mapOptions } from "~/utils/mapOptions";
 
 const Map = ({ restaurants }: RestaurantProps) => {
-  // const [coords, setCoords] = useState({
-  //   lat: 54.7902566,
-  //   lng: 18.4069856,
-  // });
-
-  const defaultCenter = {
-    lat: 51.9537505,
-    lng: 19.1343786,
-  };
-
   const mapRef = useRef<google.maps.Map>();
   const [, setMapReady] = useState(false);
-
-  //   useEffect(() => {
-  //     navigator.geolocation.getCurrentPosition(
-  //       ({ coords: { latitude, longitude } }) => {
-  //         setCoords({ lat: latitude, lng: longitude });
-  //       }
-  //     );
-  //   }, []);
 
   const onGoogleApiLoaded = ({ map }: { map: google.maps.Map }) => {
     if (!map) return;
@@ -61,39 +26,18 @@ const Map = ({ restaurants }: RestaurantProps) => {
       lat,
       lng,
     });
-    mapRef.current.setZoom(15);
+    mapRef.current.setZoom(MAP_ZOOM.RESTAURANT);
   };
-
-  //   useEffect(() => {
-  //     if (mapRef.current && mapRef.current?.setCenter) {
-  //       // set map location programmatically when the mapCenter var changes
-  //       mapRef.current.setCenter(coords);
-  //     }
-  //   }, [mapRef]);
 
   return (
     <div className="h-full w-5/12">
       <GoogleMap
         apiKey={env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}
-        defaultZoom={6}
+        defaultZoom={MAP_ZOOM.DEFAULT}
         ref={mapRef}
-        options={{
-          disableDefaultUI: true,
-          zoomControl: true,
-          styles: [
-            {
-              featureType: "poi",
-              elementType: "labels",
-              stylers: [{ visibility: "off" }],
-            },
-          ],
-        }}
-        defaultCenter={defaultCenter}
+        options={mapOptions}
+        defaultCenter={DEFAULT_MAP_CENTER}
         onGoogleApiLoaded={onGoogleApiLoaded}
-        // onChange={(e) => {
-        //   setCoords({ lat: e.center.lat, lng: e.center.lng });
-        //   // setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
-        // }}
       >
         {restaurants.map((restaurant, i) => (
           <Marker

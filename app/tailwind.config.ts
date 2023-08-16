@@ -13,6 +13,9 @@ export default {
       ringWidth: {
         7: "7px",
       },
+      colors: {
+        "youtube-red": "#FF0000",
+      },
     },
   },
 

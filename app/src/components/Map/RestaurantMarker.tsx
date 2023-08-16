@@ -5,12 +5,13 @@ interface OwnProps {
   lng: number;
   onClick: (lat: number, lng: number) => void;
 }
-const Marker = ({ lat, lng, onClick }: OwnProps) => {
+const RestaurantMarker = ({ lat, lng, onClick }: OwnProps) => {
   return (
     <div lat={lat} lng={lng} onClick={() => onClick(lat, lng)}>
+      {/* TODO: Make it render different content based on the restaurant category, use switch statement */}
       <KebabIcon />
     </div>
   );
 };
 
-export default Marker;
+export default RestaurantMarker;

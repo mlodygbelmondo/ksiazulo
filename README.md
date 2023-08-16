@@ -31,6 +31,7 @@ Ksiazulo is a review manager application that helps users manage and track revie
 2. Start the frontend application:
 
 - Navigate to the `app` directory.
+- Run the `npm install` command to install the third party modules.
 - Run the `npm run dev` command to start the Next.js application.
 
 3. Access the application:

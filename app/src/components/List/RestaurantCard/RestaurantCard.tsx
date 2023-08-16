@@ -19,7 +19,10 @@ const RestaurantCard = ({ restaurant }: OwnProps) => {
           <RestaurantRating rating={restaurant.rating} />
         </div>
         <div className="flex w-full items-end justify-between text-sm font-normal text-gray-400">
-          <RestaurantDetails />
+          <RestaurantDetails
+            city={restaurant.city}
+            category={restaurant.category}
+          />
           <RestaurantActionButtons ytUrl={restaurant.ytUrl} />
         </div>
       </div>

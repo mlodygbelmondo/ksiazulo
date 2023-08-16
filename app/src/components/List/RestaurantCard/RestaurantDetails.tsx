@@ -1,13 +1,19 @@
 import { LiaCitySolid } from "react-icons/lia";
 import { IoRestaurantOutline } from "react-icons/io5";
-const RestaurantDetails = () => {
+
+interface OwnProps {
+  city: string;
+  category: string;
+}
+
+const RestaurantDetails = ({ city, category }: OwnProps) => {
   // TODO: use real data here
   return (
     <div className="flex items-center gap-1">
       <LiaCitySolid />
-      Władysławowo,
+      {city},
       <IoRestaurantOutline className="ml-0.5" />
-      Kebab
+      {category}
     </div>
   );
 };
