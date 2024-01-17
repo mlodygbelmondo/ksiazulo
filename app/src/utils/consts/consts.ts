@@ -10,8 +10,8 @@ export const DEFAULT_MAP_CENTER = {
   lng: 19.1343786,
 };
 
-export const APP_TITLE = "KSIĄŻULO NA MAPIE";
-export const APP_SUBTITLE = "Lista restauracji odwiedzonych przez książula";
+export const APP_TITLE = "MUALA";
+export const APP_SUBTITLE = "Książulo na mapie";
 
 // TODO: Remove hardcoded data
 // Start of hardcoded data

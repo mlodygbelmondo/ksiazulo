@@ -1,0 +1,35 @@
+[
+  {
+    "id": 3,
+    "name": "KEBAB TURECKI TAMIR KEBAB",
+    "rating": 7,
+    "latitude": 54.7993151,
+    "longitude": 18.4017928,
+    "ytUrl": "https://youtu.be/xEWaIk-Jju4",
+    "category": "Kebab",
+    "city": "Władysławowo",
+    "hasMuala": true
+  },
+  {
+    "id": 2,
+    "name": "Kebab King's",
+    "rating": 6,
+    "latitude": 54.7902566,
+    "longitude": 18.4069856,
+    "ytUrl": "https://youtu.be/xEWaIk-Jju4",
+    "category": "Kebab",
+    "city": "Władysławowo",
+    "hasMuala": false
+  },
+  {
+    "id": 1,
+    "name": "Turkish Kebab Władysławowo",
+    "rating": 6.2,
+    "latitude": 54.7993163,
+    "longitude": 18.4027457,
+    "ytUrl": "https://youtu.be/xEWaIk-Jju4",
+    "category": "Kebab",
+    "city": "Władysławowo",
+    "hasMuala": false
+  }
+]

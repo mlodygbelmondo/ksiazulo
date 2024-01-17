@@ -36,6 +36,7 @@ type Restaurant = {
   category: string;
   city: string;
   ytUrl: string;
+  hasMuala: boolean;
 };
 
 interface RestaurantProps {

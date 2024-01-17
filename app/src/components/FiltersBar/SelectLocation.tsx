@@ -1,21 +1,30 @@
-import * as React from "react";
+import React from "react";
 import Select from "@mui/joy/Select";
-import Option from "@mui/joy/Option";
 import { MdLocationOn } from "react-icons/md";
+import { SELECT_LOCATION_CITIES } from "~/utils/consts/selectLocationCities";
+import SelectLocationOption from "./SelectLocationOption";
+import { useSelectLocationTextAtom } from "~/atoms/filtersBar";
 
 export default function SelectLocation() {
+  const [locationText] = useSelectLocationTextAtom();
+
   // TODO: Make this component controlled
   return (
     <Select
       placeholder="Miasto"
       startDecorator={<MdLocationOn />}
       sx={{ width: 180, fontWeight: 400 }}
+      value={locationText}
     >
-      {/* TODO: Populate this data from an endpoint or smthn */}
-      <Option value="Będzin">Będzin</Option>
-      <Option value="Sulęcin">Sulęcin</Option>
-      <Option value="Przybynów">Przybynów</Option>
-      <Option value="Lubawa">Lubawa</Option>
+      {SELECT_LOCATION_CITIES.map((city) => (
+        <SelectLocationOption
+          key={city.label}
+          lat={city.lat}
+          lng={city.lng}
+          zoom={city.zoom}
+          label={city.label}
+        />
+      ))}
     </Select>
   );
 }

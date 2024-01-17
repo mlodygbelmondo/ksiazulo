@@ -11,7 +11,7 @@ const Navbar = () => {
         <AppSubtitle />
       </div>
       <div className="flex h-full items-center">
-        <Navigation />
+        {/* <Navigation /> */}
         <HamburgerMenu />
       </div>
     </div>

@@ -17,7 +17,7 @@ const RestaurantActionButtons = ({ ytUrl }: OwnProps) => {
   ];
 
   return (
-    <div className="flex gap-3">
+    <div className="flex items-center gap-3">
       {restaurantActionButtons.map((button, index) => (
         <a
           target="_blank"
