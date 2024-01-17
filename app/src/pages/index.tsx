@@ -6,6 +6,7 @@ import Layout from "./layout";
 import { type ReactElement } from "react";
 import NavbarLayout from "./shared/NavbarLayout";
 import List from "~/components/List/List";
+import { env } from "~/env.mjs";
 
 export default function Home({
   restaurants,
@@ -29,7 +30,7 @@ export const getServerSideProps: GetServerSideProps<
   RestaurantProps
 > = async () => {
   const restaurantsFile = await fs.readFile(
-    "app/src/data/restaurants.json",
+    env.NEXT_PUBLIC_RESTAURANTS_JSON_PATH,
     "utf-8"
   );
 
