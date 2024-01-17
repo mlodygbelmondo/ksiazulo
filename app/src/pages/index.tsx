@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps<
   RestaurantProps
 > = async () => {
   const restaurantsFile = await fs.readFile(
-    env.NEXT_PUBLIC_RESTAURANTS_JSON_PATH,
+    process.cwd() + env.NEXT_PUBLIC_RESTAURANTS_JSON_PATH,
     "utf-8"
   );
 
