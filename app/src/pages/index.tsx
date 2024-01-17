@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps<
   RestaurantProps
 > = async () => {
   const restaurantsFile = await fs.readFile(
-    "src/data/restaurants.json",
+    "app/src/data/restaurants.json",
     "utf-8"
   );
 
