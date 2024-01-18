@@ -1,16 +1,11 @@
 import Head from "next/head";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import { promises as fs } from "fs";
 import Map from "~/components/Map/Map";
 import Layout from "./layout";
 import { type ReactElement } from "react";
 import NavbarLayout from "./shared/NavbarLayout";
 import List from "~/components/List/List";
-import { env } from "~/env.mjs";
-
-export default function Home({
-  restaurants,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+import { restaurants } from "~/utils/consts/restaurants";
+export default function Home() {
   return (
     <>
       <Head>
@@ -26,18 +21,18 @@ export default function Home({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<
-  RestaurantProps
-> = async () => {
-  const restaurantsFile = await fs.readFile(
-    env.NEXT_PUBLIC_RESTAURANTS_JSON_PATH,
-    "utf-8"
-  );
+// export const getServerSideProps: GetServerSideProps<
+//   RestaurantProps
+// > = async () => {
+//   const restaurantsFile = await fs.readFile(
+//     env.NEXT_PUBLIC_RESTAURANTS_JSON_PATH,
+//     "utf-8"
+//   );
 
-  const restaurants = JSON.parse(restaurantsFile) as Restaurant[];
+//   const restaurants = JSON.parse(restaurantsFile) as Restaurant[];
 
-  return { props: { restaurants } };
-};
+//   return { props: { restaurants } };
+// };
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
