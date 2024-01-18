@@ -11,22 +11,24 @@ interface OwnProps {
 
 const RestaurantCard = ({ restaurant }: OwnProps) => {
   return (
-    <Card variant="outlined" className="flex w-full flex-row">
-      <RestaurantImage />
-      <div className="flex w-[calc(100%-160px)] flex-col justify-between font-semibold text-indigo-950">
-        <div className="flex w-full justify-between">
-          <RestaurantTitle
-            title={restaurant.name}
-            hasMuala={restaurant.hasMuala}
-          />
-          <RestaurantRating rating={restaurant.rating} />
-        </div>
-        <div className="flex w-full items-end justify-between text-sm font-normal text-gray-400">
-          <RestaurantDetails
-            city={restaurant.city}
-            category={restaurant.category}
-          />
-          <RestaurantActionButtons ytUrl={restaurant.ytUrl} />
+    <Card variant="outlined">
+      <div className="flex gap-2">
+        <RestaurantImage />
+        <div className="flex w-[calc(100%-160px)] flex-col justify-between font-semibold text-indigo-950">
+          <div className="flex w-full justify-between">
+            <RestaurantTitle
+              title={restaurant.name}
+              hasMuala={restaurant.hasMuala}
+            />
+            <RestaurantRating rating={restaurant.rating} />
+          </div>
+          <div className="flex w-full items-end justify-between text-sm font-normal text-gray-400">
+            <RestaurantDetails
+              city={restaurant.city}
+              category={restaurant.category}
+            />
+            <RestaurantActionButtons ytUrl={restaurant.ytUrl} />
+          </div>
         </div>
       </div>
     </Card>
